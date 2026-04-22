@@ -1,2 +1,83 @@
 # TBI-Survival-Analysis
 Landmark-based survival analysis for predicting time to severe RAP deterioration in TBI patients using early physiological signals. Implements Kaplan-Meier, Cox Proportional Hazards, and Random Survival Forest models to compare interpretable and ML-based time-to-event prediction.
+
+## Overview
+
+The analysis uses a time-to-event framework centered on the compensatory reserve index (RAP). Rather than only asking whether deterioration occurs, this project asks **when** severe deterioration occurs. To support this, landmark survival models were developed using early-window physiological features derived from RAP, ICP, CPP, MAP, and AMP.
+
+Two landmark settings were explored:
+
+- **3-hour landmark**
+- **6-hour landmark**
+
+For each landmark, only patients who remained event-free up to the landmark time were included. Features were extracted from the early monitoring window, and survival models were used to predict time to subsequent severe deterioration.
+
+## Clinical Question
+
+**From the first few hours of monitoring, can we predict how soon a patient will experience severe compensatory reserve deterioration?**
+
+## Event Definition
+
+The outcome was defined as the **first sustained RAP value below -0.1 for 10 consecutive minutes**.
+
+This definition was chosen to reduce sensitivity to noise, transient fluctuations, and artifact-driven crossings, ensuring that the detected event reflects persistent and clinically meaningful deterioration.
+
+## Methods
+
+This project applies a landmark time-to-event modeling framework:
+
+1. Define an early observation window (3h or 6h).
+2. Exclude patients with an event during or before the landmark.
+3. Extract summary features from the early window.
+4. Define time from landmark to event or censoring.
+5. Fit and compare survival models.
+
+### Models Used
+
+- **Kaplan-Meier analysis**
+- **Cox Proportional Hazards model**
+- **Random Survival Forest**
+
+### Features
+
+Early physiological summaries were derived from:
+
+- **RAP**
+- **ICP**
+- **CPP**
+- **MAP**
+- **AMP**
+
+Example features include:
+
+- mean and standard deviation
+- minimum and maximum values
+- burden above or below clinically relevant thresholds
+- threshold crossing frequency
+- simple trend/slope measures
+
+## Main Findings
+
+- Early **RAP-derived features** carried the strongest and most consistent prognostic signal.
+- **Lower early RAP** was associated with **earlier severe deterioration**.
+- RAP-based Kaplan-Meier grouping showed clearer separation than ICP-based grouping.
+- The **3-hour landmark** provided the best overall balance of:
+  - sample retention
+  - post-landmark event yield
+  - interpretability
+  - predictive performance
+- Random Survival Forest showed competitive performance, but the main biological message was consistent across both statistical and machine learning models.
+
+## Why This Project Matters
+
+This project demonstrates how survival analysis can be applied to continuous physiological monitoring data to support early risk assessment in neurocritical care. It also shows that compensatory reserve measures may provide more meaningful early prognostic information than pressure-based measures alone.
+
+## Repository Structure
+
+```text
+.
+├── notebooks/          # Jupyter notebooks for 3h and 6h landmark analyses
+├── data/               # Input data files or processed feature tables
+├── figures/            # Kaplan-Meier plots, feature importance plots, etc.
+├── results/            # Saved model outputs, tables, and report files
+└── README.md
