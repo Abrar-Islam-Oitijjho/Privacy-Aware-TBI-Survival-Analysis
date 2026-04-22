@@ -68,6 +68,46 @@ Example features include:
   - predictive performance
 - Random Survival Forest showed competitive performance, but the main biological message was consistent across both statistical and machine learning models.
 
+## Figures
+
+<table>
+  <tr>
+    <td align="center">
+      <b>Kaplan-Meier: RAP groups (3h)</b><br>
+      <img src="Result/km_curve_3h_rap.jpg" width="450">
+    </td>
+    <td align="center">
+      <b>Kaplan-Meier: ICP groups (3h)</b><br>
+      <img src="Result/km_curve_3h_icp.jpg" width="450">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <b>Kaplan-Meier: RAP groups (6h)</b><br>
+      <img src="Result/km_curve_6h_rap.jpg" width="450">
+    </td>
+    <td align="center">
+      <b>Kaplan-Meier: ICP groups (3h)</b><br>
+      <img src="Result/km_curve_6h_icp.jpg" width="450">
+    </td>
+  </tr>
+</table>
+
+## RSF Feature Importance
+
+<table>
+  <tr>
+    <td align="center">
+      <b>RSF Feature Importance (3h)</b><br>
+      <img src="Result/rsf_feat_imp3h_param.jpg" width="450">
+    </td>
+    <td align="center">
+      <b>RSF Feature Importance (6h)</b><br>
+      <img src="Result/rsf_feat_imp6h_param.jpg" width="450">
+    </td>
+  </tr>
+</table>
+
 ## Why This Project Matters
 
 This project demonstrates how survival analysis can be applied to continuous physiological monitoring data to support early risk assessment in neurocritical care. It also shows that compensatory reserve measures may provide more meaningful early prognostic information than pressure-based measures alone.
