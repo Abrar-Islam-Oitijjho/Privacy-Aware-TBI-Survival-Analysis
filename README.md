@@ -72,12 +72,3 @@ Example features include:
 
 This project demonstrates how survival analysis can be applied to continuous physiological monitoring data to support early risk assessment in neurocritical care. It also shows that compensatory reserve measures may provide more meaningful early prognostic information than pressure-based measures alone.
 
-## Repository Structure
-
-```text
-.
-├── notebooks/          # Jupyter notebooks for 3h and 6h landmark analyses
-├── data/               # Input data files or processed feature tables
-├── figures/            # Kaplan-Meier plots, feature importance plots, etc.
-├── results/            # Saved model outputs, tables, and report files
-└── README.md
