@@ -123,7 +123,8 @@ Example features include:
   </tr>
 </table>
 
-## Why This Project Matters
+## Detailed Report
 
-This project demonstrates how survival analysis can be applied to continuous physiological monitoring data to support early risk assessment in neurocritical care. It also shows that compensatory reserve measures may provide more meaningful early prognostic information than pressure-based measures alone.
+A detailed project report, including the full methodology, privacy-aware preprocessing design, survival-modeling results, and interpretation, can be found here:
 
+[Privacy-Aware Survival Analysis Report](survival_analysis_report.pdf)
